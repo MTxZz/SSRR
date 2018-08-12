@@ -1,5 +1,5 @@
-from get_url import get_html,v2_find,ssr_find
-from url_decode import ssr_decode, v2_decode
+from get_url import get_html,v2_find
+from url_decode import   v2_decode
 import json
 
 
@@ -114,7 +114,7 @@ def My_Config(v2ray):
 		}
 		}
 	with open('/etc/v2ray/config1.json','w') as file:
-		json.dumps(vs,file)
+		json.dump(vs,file)
 
 
 
@@ -124,7 +124,6 @@ def My_Config(v2ray):
 if __name__ == '__main__':
 	html = get_html()
 	v2ray = v2_find(html)
-	ssr = ssr_find(html)
   #print('v2ray链接1:')
 	v1 = v2_decode(v2ray[0])
 	print('V2ray解码如下：')
@@ -136,8 +135,5 @@ if __name__ == '__main__':
 
 	My_Config(v1)
 
-	ss = ssr_decode(ssr[0])
-	print('SSRR解码如下：')
-	print(ss)
 
 

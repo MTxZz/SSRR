@@ -15,21 +15,6 @@ def get_html():
 	html = resp.text
 	return html
 
-def ssr_find(html):
-
-	ssr = []
-	find = re.findall(r'https://api.mrxn.net/api.php\?data=ssr:(.*)\r',html)
-
-	j = 0
-	for f in find:
-		j = j+1
-		ssrhref = 'ssr:' + f
-		ssr.append(f)
-		#print(type(ssrhref))
-		print('SSRR链接如下：')
-		print(ssrhref)
-	return ssr
-
 def v2_find(html):
 
 	v2ray = []
